@@ -24,5 +24,5 @@ void test_validate_my_username()
 
 	username = my_username();
 	conf_username = malloc_username_from_conf_file();
-	TEST_ASSERT_EQUAL_STRING_MESSAGE(username, conf_username);
+	TEST_ASSERT_EQUAL_STRING_MESSAGE(username, conf_username, "Matching username");
 }
