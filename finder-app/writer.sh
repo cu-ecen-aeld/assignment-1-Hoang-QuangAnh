@@ -5,6 +5,10 @@ if [ $# -ne 2 ]; then
 else
 	writefile=$1
 	writestr=$2
+	writedir="$(dirname "$writefile")"
+	if [ ! -d $writedir ]; then
+		mkdir -p $writedir
+	fi
 	if [ ! -d ${writefile} ]; then
 		echo ${writestr} > ${writefile}
 		if [ ! -f ${writefile} ]; then
